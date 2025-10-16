@@ -77,43 +77,43 @@ export const Testimonial17 = (props: Testimonial17Props) => {
 };
 
 export const Testimonial17Defaults: Props = {
-  heading: "Customer testimonials",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  heading: "Customer stories",
+  description: "Real experiences from homes and businesses we've served",
   testimonials: [
     {
       quote:
-        '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',
+        '"ArcticAir transformed our office\'s HVAC system with incredible efficiency and professionalism."',
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
         alt: "Testimonial avatar 1",
       },
-      name: "Name Surname",
-      position: "Position",
-      companyName: "Company name",
+      name: "Michael Thompson",
+      position: "Facility Manager",
+      companyName: "Tech Innovations Inc",
       numberOfStars: 5,
     },
     {
       quote:
-        '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',
+        '"Their AI-powered diagnostic tools identified issues I didn\'t even know existed."',
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
         alt: "Testimonial avatar 2",
       },
-      name: "Name Surname",
-      position: "Position",
-      companyName: "Company name",
+      name: "Sarah Rodriguez",
+      position: "Homeowner",
+      companyName: "Green Valley Estates",
       numberOfStars: 5,
     },
     {
       quote:
-        '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',
+        '"Fast, reliable, and incredibly smart. ArcticAir is the future of home comfort."',
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
         alt: "Testimonial avatar 3",
       },
-      name: "Name Surname",
-      position: "Position",
-      companyName: "Company name",
+      name: "David Chen",
+      position: "Property Manager",
+      companyName: "Urban Living Group",
       numberOfStars: 5,
     },
   ],
