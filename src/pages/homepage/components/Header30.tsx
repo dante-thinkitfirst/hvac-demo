@@ -26,11 +26,9 @@ export const Header30 = (props: Header30Props) => {
       <div className="container relative z-10">
         <div className="flex max-h-[60rem] min-h-svh items-center justify-center py-16 text-center md:py-24 lg:py-28">
           <div className="w-full max-w-lg">
-            <h1 className="mb-5 text-6xl font-bold text-text-alternative md:mb-6 md:text-9xl lg:text-10xl">
-              {heading}
-            </h1>
-            <p className="text-text-alternative md:text-md">{description}</p>
-            <div className="mt-6 flex items-center justify-center gap-4 md:mt-8">
+            <h1 className="mb-5 text-text-alternative md:mb-6">{heading}</h1>
+            <p className="text-text-alternative">{description}</p>
+            <div className="mt-6 flex items-center justify-center gap-4 md:mt-8 text-lg font-medium">
               {buttons.map((button, index) => (
                 <Button key={index} {...button}>
                   {button.title}
