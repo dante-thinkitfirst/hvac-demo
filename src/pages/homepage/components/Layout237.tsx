@@ -1,6 +1,9 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
+import scheduleIcon from "@/assets/images/schedule_send.svg";
+import diagnosisIcon from "@/assets/images/diagnosis.svg";
+import automationIcon from "@/assets/images/automation.svg";
 
 type ImageProps = {
   src: string;
@@ -35,11 +38,9 @@ export const Layout237 = (props: Layout237Props) => {
         <div className="flex flex-col items-center">
           <div className="rb-12 mb-12 text-center md:mb-18 lg:mb-20">
             <div className="w-full max-w-lg">
-              <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-              <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-                {heading}
-              </h2>
-              <p className="md:text-md">{description}</p>
+              <p className="mb-3 tagline md:mb-4">{tagline}</p>
+              <h2 className="rb-5 mb-5 md:mb-6">{heading}</h2>
+              <p className="">{description}</p>
             </div>
           </div>
           <div className="grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
@@ -55,10 +56,8 @@ export const Layout237 = (props: Layout237Props) => {
                     alt={section.icon.alt}
                   />
                 </div>
-                <h3 className="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                  {section.heading}
-                </h3>
-                <p>{section.description}</p>
+                <h3 className="h4 mb-5 md:mb-6">{section.heading}</h3>
+                <p className="text-md md:text-lg">{section.description}</p>
               </div>
             ))}
           </div>
@@ -83,7 +82,7 @@ export const Layout237Defaults: Props = {
   sections: [
     {
       icon: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+        src: scheduleIcon,
         alt: "Relume logo 1",
       },
       heading: "Request service",
@@ -92,7 +91,7 @@ export const Layout237Defaults: Props = {
     },
     {
       icon: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+        src: diagnosisIcon,
         alt: "Relume logo 2",
       },
       heading: "System diagnosis",
@@ -101,7 +100,7 @@ export const Layout237Defaults: Props = {
     },
     {
       icon: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+        src: automationIcon,
         alt: "Relume logo 3",
       },
       heading: "Expert resolution",
@@ -110,7 +109,11 @@ export const Layout237Defaults: Props = {
     },
   ],
   buttons: [
-    { title: "Learn more", variant: "secondary" },
+    {
+      title: "Learn more",
+      variant: "secondary",
+      className: "border-border-secondary",
+    },
     {
       title: "Contact us",
       variant: "link",

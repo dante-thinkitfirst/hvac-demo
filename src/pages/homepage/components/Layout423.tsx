@@ -54,14 +54,17 @@ export const Layout423 = (props: Layout423Props) => {
   );
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section
+      id="relume"
+      className="px-[5%] py-16 md:py-24 lg:py-28 bg-primary-blue"
+    >
       <div className="container">
         <div className="mx-auto mb-12 w-full max-w-lg text-center md:mb-18 lg:mb-20">
-          <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-          <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-            {heading}
-          </h2>
-          <p className="md:text-md">{description}</p>
+          <p className="tagline mb-4 md:mb-5 text-text-alternative">
+            {tagline}
+          </p>
+          <h2 className="rb-5 mb-5 text-text-alternative">{heading}</h2>
+          <p className="text-text-alternative">{description}</p>
         </div>
         <div className="flex flex-col justify-between gap-6 md:gap-8 lg:flex-row">
           {features.map((feature, index) => (
@@ -83,14 +86,14 @@ export const Layout423 = (props: Layout423Props) => {
               <div className="group relative flex h-full min-h-[70vh] flex-col justify-end p-6 md:p-8">
                 <div className="lg:absolute lg:inset-0 lg:z-0 lg:transition-all lg:duration-300 lg:group-hover:bg-black/50" />
                 <div className="z-10">
-                  <p className="mb-2 font-semibold text-text-alternative">
+                  <p className="mb-2 tagline text-text-alternative">
                     {feature.tagline}
                   </p>
-                  <h3 className="text-2xl font-bold text-text-alternative md:text-3xl md:leading-[1.3] lg:text-4xl">
+                  <h3 className="h4 text-text-alternative">
                     {feature.heading}
                   </h3>
                   <div className="lg:hidden">
-                    <p className="mt-5 text-text-alternative md:mt-6">
+                    <p className="mt-5 md:mt-6 text-text-alternative">
                       {feature.description}
                     </p>
                     <div className="mt-6 md:mt-8">
@@ -113,7 +116,7 @@ export const Layout423 = (props: Layout423Props) => {
                       exit="hidden"
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <p className="mt-5 text-text-alternative md:mt-6">
+                      <p className="mt-5 text-text-alternative md:mt-6 text-md md:text-lg">
                         {feature.description}
                       </p>
                       <div className="mt-6 md:mt-8">
