@@ -30,11 +30,9 @@ export const Layout149 = (props: Layout149Props) => {
         <div className="flex flex-col items-center">
           <div className="mb-12 md:mb-18 lg:mb-20">
             <div className="mx-auto flex max-w-lg flex-col items-center text-center">
-              <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-              <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-                {heading}
-              </h2>
-              <p className="mb-5 md:mb-6 md:text-md">{description}</p>
+              <p className="mb-3 tagline md:mb-4">{tagline}</p>
+              <h2 className="rb-5 mb-5 md:mb-6">{heading}</h2>
+              <p className="mb-5 md:mb-6">{description}</p>
               <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 py-2">
                 {logos.map((logo, index) => (
                   <img
@@ -47,7 +45,11 @@ export const Layout149 = (props: Layout149Props) => {
               </div>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
                 {buttons.map((button, index) => (
-                  <Button key={index} {...button}>
+                  <Button
+                    className="border-border-secondary"
+                    key={index}
+                    {...button}
+                  >
                     {button.title}
                   </Button>
                 ))}

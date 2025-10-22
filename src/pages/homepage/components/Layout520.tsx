@@ -37,10 +37,8 @@ export const Layout520 = (props: Layout520Props) => {
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto max-w-lg text-center">
             <p className="mb-3 tagline md:mb-4">{tagline}</p>
-            <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-              {heading}
-            </h2>
-            <p className="md:text-md">{description}</p>
+            <h2 className="mb-5 md:mb-6 ">{heading}</h2>
+            <p className="">{description}</p>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
@@ -69,12 +67,17 @@ const Card: React.FC<CardProps> = ({
       <div className="mb-5 md:mb-6">
         <img src={logo.src} className="size-12" alt={logo.alt} />
       </div>
-      <h3 className="mb-3 text-2xl font-bold text-text-alternative md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
-        {heading}
-      </h3>
-      <p className="text-text-alternative">{description}</p>
+      <h3 className="h4 mb-3 text-text-alternative md:mb-4">{heading}</h3>
+      <p className="text-text-alternative text-base md:text-lg">
+        {description}
+      </p>
       <div className="mt-5 flex items-center md:mt-6">
-        <Button {...button}>{button.title}</Button>
+        <Button
+          {...button}
+          className="text-text-alternative text-base md:text-lg font-medium"
+        >
+          {button.title}
+        </Button>
       </div>
     </div>
   </div>
@@ -118,7 +121,7 @@ export const Layout520Defaults: Props = {
       description:
         "Fast, reliable diagnostics and repair for all HVAC system types and brands.",
       button: {
-        title: "Schewdule repair",
+        title: "Schedule repair",
         variant: "link-alt",
         size: "link",
         iconRight: <RxChevronRight />,

@@ -47,19 +47,26 @@ export const Pricing23 = (props: Pricing23Props) => {
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section
+      id="relume"
+      className="px-[5%] py-16 md:py-24 lg:py-28 bg-primary-blue pricing23-section"
+    >
       <div className="container">
         <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
-          <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-          <h1 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-            {heading}
-          </h1>
-          <p className="md:text-md">{description}</p>
+          <p className="mb-3 tagline text-text-alternative md:mb-4">
+            {tagline}
+          </p>
+          <h2 className="mb-5 text-text-alternative md:mb-6">{heading}</h2>
+          <p className="text-text-alternative">{description}</p>
         </div>
         <Tabs defaultValue={defaultTabValue}>
-          <TabsList className="mx-auto mb-12 w-fit">
+          <TabsList className="mx-auto mb-12 w-fit text-text-alternative p-2 bg-[#162B43]">
             {tabs.map((tab, index) => (
-              <TabsTrigger key={index} value={tab.value}>
+              <TabsTrigger
+                key={index}
+                value={tab.value}
+                className="text-text-alternative data-[state=active]:bg-primary-blue bg-[#162B43] border-none"
+              >
                 {tab.tabName}
               </TabsTrigger>
             ))}
@@ -88,33 +95,37 @@ const PricingPlan = ({
   plan: PricingPlan;
   billing: Billing;
 }) => (
-  <div className="flex h-full flex-col justify-between border border-border-primary px-6 py-8 md:p-8">
+  <div className="flex h-full flex-col justify-between border border-[rgba(255,255,255,0.2)] px-6 py-8 md:p-8 bg-[#162B43]">
     <div>
       <div className="rb-6 mb-6 text-center md:mb-8">
-        <h2 className="text-md font-bold leading-[1.4] md:text-xl">
+        <h3 className="h6 text-lg md:text-2xl text-text-alternative">
           {plan.planName}
-        </h2>
-        <h3 className="my-2 text-6xl font-bold md:text-9xl lg:text-10xl">
+        </h3>
+        <p className="my-2 h1 text-text-alternative">
           {plan.price}
           <span className="text-2xl font-bold md:text-3xl md:leading-[1.3] lg:text-4xl">
             {billing === "monthly" ? "/mo" : "/yr"}
           </span>
-        </h3>
+        </p>
         {billing === "yearly" && "discount" in plan && (
-          <p className="mt-2 font-medium">{plan.discount}</p>
+          <p className="mt-2 text-text-alternative">{plan.discount}</p>
         )}
       </div>
       <div className="mb-8 grid grid-cols-1 gap-4 py-2">
         {plan.features.map((feature, index) => (
           <div key={index} className="flex self-start">
-            <div className="mr-4 flex-none self-start">{feature.icon}</div>
-            <p>{feature.text}</p>
+            <div className="mr-4 flex-none self-start text-text-alternative">
+              {feature.icon}
+            </div>
+            <p className="text-text-alternative text-base md:text-lg">
+              {feature.text}
+            </p>
           </div>
         ))}
       </div>
     </div>
     <div>
-      <Button {...plan.button} className="w-full">
+      <Button {...plan.button} className="w-full bg-[#4A90E2]">
         {plan.button.title}
       </Button>
     </div>

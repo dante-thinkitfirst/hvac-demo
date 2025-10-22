@@ -32,18 +32,19 @@ export const Layout521 = (props: Layout521Props) => {
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section
+      id="relume"
+      className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#DAD9D9]"
+    >
       <div className="container">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto max-w-lg text-center">
-            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-            <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-              {heading}
-            </h2>
-            <p className="md:text-md">{description}</p>
+            <p className="mb-3 tagline md:mb-4">{tagline}</p>
+            <h2 className="mb-5 md:mb-6">{heading}</h2>
+            <p className="">{description}</p>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 xl:grid-cols-4">
           {cards.map((card, index) => (
             <Card key={index} {...card} />
           ))}
@@ -69,12 +70,17 @@ const Card: React.FC<CardProps> = ({
       <div className="mb-3 md:mb-4">
         <img src={logo.src} className="size-12" alt={logo.alt} />
       </div>
-      <h3 className="mb-2 text-xl font-bold text-text-alternative md:text-2xl">
-        {heading}
-      </h3>
-      <p className="text-text-alternative">{description}</p>
+      <h3 className="mb-2 text-text-alternative h4">{heading}</h3>
+      <p className="text-text-alternative text-base md:text-lg">
+        {description}
+      </p>
       <div className="mt-5 flex items-center md:mt-6">
-        <Button {...button}>{button.title}</Button>
+        <Button
+          className="text-text-alternative text-base md:text-lg font-medium"
+          {...button}
+        >
+          {button.title}
+        </Button>
       </div>
     </div>
   </div>
