@@ -61,9 +61,9 @@ export const Navbar5 = (props: Navbar5Props) => {
   return (
     <section
       id="relume"
-      className="relative z-[999] flex w-full items-center justify-between border-b border-border-primary bg-background-primary lg:min-h-18 lg:px-[5%]"
+      className="relative z-[999] flex w-full items-center justify-between border-b border-border-primary lg:min-h-18 lg:px-[5%] bg-[#162B43]"
     >
-      <div className="size-full lg:flex lg:items-center lg:justify-between">
+      <div className="size-full lg:flex lg:items-center lg:justify-between text-text-alternative">
         <div className="lg:flex">
           <div className="flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0">
             <a href={logo.url}>
@@ -117,7 +117,7 @@ export const Navbar5 = (props: Navbar5Props) => {
                 <a
                   key={index}
                   href={link.url}
-                  className="block py-3 text-md first:pt-7 lg:px-4 lg:py-6 lg:text-base first:lg:pt-6"
+                  className="block py-3 first:pt-7 lg:px-4 lg:py-6 text-base md:text-lg first:lg:pt-6"
                 >
                   {link.title}
                 </a>
@@ -134,7 +134,7 @@ export const Navbar5 = (props: Navbar5Props) => {
         </div>
         <div className="hidden lg:flex lg:gap-4">
           {buttons.map((button, index) => (
-            <Button key={index} {...button}>
+            <Button key={index} {...button} className={`${button.className}`}>
               {button.title}
             </Button>
           ))}
@@ -159,7 +159,7 @@ const SubMenu = ({
       onMouseLeave={() => !isMobile && setIsDropdownOpen(false)}
     >
       <button
-        className="flex w-full items-center justify-between gap-x-2 py-3 text-center text-md lg:w-auto lg:flex-none lg:justify-start lg:px-4 lg:py-6 lg:text-base"
+        className="flex w-full items-center justify-between gap-x-2 py-3 text-center lg:w-auto lg:flex-none lg:justify-start lg:px-4 lg:py-6 text-base md:text-lg"
         onClick={() => setIsDropdownOpen((prev) => !prev)}
       >
         <span>{title}</span>
@@ -191,7 +191,7 @@ const SubMenu = ({
         exit="close"
         animate={isDropdownOpen ? "open" : "close"}
         transition={{ duration: 0.3 }}
-        className="bottom-auto left-0 top-full w-full min-w-full max-w-full overflow-hidden bg-background-primary lg:absolute lg:w-[100vw] lg:border-b lg:border-border-primary lg:px-[5%] lg:[--height-close:auto]"
+        className="bottom-auto left-0 top-full w-full min-w-full max-w-full overflow-hidden bg-[#162B43] lg:absolute lg:w-[100vw] lg:border-b lg:border-border-primary lg:px-[5%] lg:[--height-close:auto]"
       >
         <div className="mx-auto flex size-full max-w-full items-center justify-between">
           <div className="w-full lg:flex">
@@ -201,21 +201,21 @@ const SubMenu = ({
                   key={index}
                   className="grid auto-rows-max grid-cols-1 grid-rows-[max-content] gap-y-2 md:gap-y-4"
                 >
-                  <h4 className="text-sm font-semibold leading-[1.3]">
-                    {group.title}
-                  </h4>
+                  <h4 className="tagline">{group.title}</h4>
                   {group.links.map((link, index) => (
                     <a
                       key={index}
                       href={link.url}
                       className="grid w-full grid-cols-[max-content_1fr] items-start gap-x-3 py-2"
                     >
-                      <div className="flex size-6 flex-col items-center justify-center">
+                      <div className="flex size-6 flex-col items-center justify-center text-text-alternative">
                         <img src={link.image.src} alt={link.image.alt} />
                       </div>
                       <div className="flex flex-col items-start justify-center">
-                        <h5 className="font-semibold">{link.title}</h5>
-                        <p className="hidden text-sm md:block">
+                        <h5 className="p text-base md:text-lg font-semibold">
+                          {link.title}
+                        </h5>
+                        <p className="hidden text-sm md:text-base md:block">
                           {link.description}
                         </p>
                       </div>
@@ -226,9 +226,7 @@ const SubMenu = ({
             </div>
             <div className="max-w-none relative flex flex-1 p-6 md:py-8 md:pl-8 md:pr-0 lg:max-w-md">
               <div className="relative z-10 grid w-full auto-cols-fr auto-rows-max grid-cols-1 grid-rows-[max-content_max-content] gap-4">
-                <h4 className="text-sm font-semibold leading-[1.3]">
-                  {megaMenu.featuredSections.title}
-                </h4>
+                <h4 className="tagline">{megaMenu.featuredSections.title}</h4>
                 <div className="grid auto-cols-fr grid-cols-1 grid-rows-[auto_auto] items-start gap-y-2 lg:grid-rows-[auto]">
                   {megaMenu.featuredSections.links.map((link, index) => (
                     <a
@@ -244,13 +242,17 @@ const SubMenu = ({
                         />
                       </div>
                       <div className="rt-4 mt-4 flex flex-col justify-start md:mt-0">
-                        <h5 className="mb-1 font-semibold">{link.title}</h5>
-                        <p className="text-sm">{link.description}</p>
+                        <h5 className="mb-1 font-semibold p text-base md:text-lg">
+                          {link.title}
+                        </h5>
+                        <p className="text-sm md:text-base">
+                          {link.description}
+                        </p>
                         {link.button && (
                           <div className="mt-1.5">
                             <Button
                               {...link.button}
-                              className="text-sm underline"
+                              className="text-sm md:text-base underline text-text-alternative"
                             >
                               {link.button.title}
                             </Button>
@@ -261,10 +263,15 @@ const SubMenu = ({
                   ))}
                 </div>
                 <div className="flex items-center">
-                  <Button {...megaMenu.button}>{megaMenu.button.title}</Button>
+                  <Button
+                    {...megaMenu.button}
+                    className="text-text-alternative text-sm md:text-base"
+                  >
+                    {megaMenu.button.title}
+                  </Button>
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-auto top-0 min-w-full bg-background-secondary lg:min-w-[100vw]" />
+              <div className="absolute bottom-0 left-0 right-auto top-0 min-w-full bg-[#1D395A] lg:min-w-[100vw]" />
             </div>
           </div>
         </div>
@@ -294,7 +301,7 @@ export const Navbar5Defaults: Props = {
               {
                 url: "#",
                 image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon-white.svg",
                   alt: "Icon 1",
                 },
                 title: "Contact",
@@ -303,7 +310,7 @@ export const Navbar5Defaults: Props = {
               {
                 url: "#",
                 image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon-white.svg",
                   alt: "Icon 2",
                 },
                 title: "Get a free estimate",
@@ -312,7 +319,7 @@ export const Navbar5Defaults: Props = {
               {
                 url: "#",
                 image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon-white.svg",
                   alt: "Icon 3",
                 },
                 title: "1-800-ARCTIC",
@@ -321,7 +328,7 @@ export const Navbar5Defaults: Props = {
               {
                 url: "#",
                 image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon-white.svg",
                   alt: "Icon 4",
                 },
                 title: "Book now",
@@ -335,7 +342,7 @@ export const Navbar5Defaults: Props = {
               {
                 url: "#",
                 image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon-white.svg",
                   alt: "Icon 5",
                 },
                 title: "Blog",
@@ -344,7 +351,7 @@ export const Navbar5Defaults: Props = {
               {
                 url: "#",
                 image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon-white.svg",
                   alt: "Icon 6",
                 },
                 title: "Case studies",
@@ -353,7 +360,7 @@ export const Navbar5Defaults: Props = {
               {
                 url: "#",
                 image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon-white.svg",
                   alt: "Icon 7",
                 },
                 title: "Careers",
@@ -362,7 +369,7 @@ export const Navbar5Defaults: Props = {
               {
                 url: "#",
                 image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon-white.svg",
                   alt: "Icon 8",
                 },
                 title: "Featured insights",
@@ -410,10 +417,13 @@ export const Navbar5Defaults: Props = {
       title: "Login",
       variant: "secondary",
       size: "sm",
+      className:
+        "text-base md:text-lg bg-transparent border-transparent text-text-alternative",
     },
     {
       title: "Demo",
       size: "sm",
+      className: "text-base md:text-lg bg-[#4A90E2]",
     },
   ],
 };

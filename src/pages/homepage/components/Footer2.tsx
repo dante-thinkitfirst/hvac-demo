@@ -94,10 +94,12 @@ export const Footer2 = (props: Footer2Props) => {
                 key={index}
                 className="flex flex-col items-start justify-start"
               >
-                <h2 className="mb-3 font-semibold md:mb-4">{column.title}</h2>
+                <h2 className="text-base md:text-lg mb-3 font-semibold md:mb-4">
+                  {column.title}
+                </h2>
                 <ul>
                   {column.links.map((link, linkIndex) => (
-                    <li key={linkIndex} className="py-2 text-sm">
+                    <li key={linkIndex} className="py-2 text-sm md:text-base">
                       <a href={link.url} className="flex items-center gap-3">
                         {link.title}
                       </a>
@@ -108,8 +110,12 @@ export const Footer2 = (props: Footer2Props) => {
             ))}
           </div>
           <div className="flex flex-col">
-            <h1 className="mb-3 font-semibold md:mb-4">{newsletterHeading}</h1>
-            <p className="mb-3 text-sm md:mb-4">{newsletterDescription}</p>
+            <h2 className="text-base md:text-lg mb-3 font-semibold md:mb-4">
+              {newsletterHeading}
+            </h2>
+            <p className="mb-3 text-base md:text-lg md:mb-4">
+              {newsletterDescription}
+            </p>
             <div className="w-full max-w-md">
               <form
                 className="mb-3 grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-[1fr_max-content] md:gap-y-4"
@@ -118,23 +124,29 @@ export const Footer2 = (props: Footer2Props) => {
                 <Input
                   id="email"
                   type="email"
+                  className="text-base md:text-lg"
                   placeholder={inputPlaceholder}
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
                 />
-                <Button {...button}>{button.title}</Button>
+                <Button {...button} className="text-base md:text-lg">
+                  {button.title}
+                </Button>
               </form>
-              <div dangerouslySetInnerHTML={{ __html: termsAndConditions }} />
+              <div
+                className="text-xs"
+                dangerouslySetInnerHTML={{ __html: termsAndConditions }}
+              />
             </div>
           </div>
         </div>
         <div className="h-px w-full bg-black" />
         <div className="flex flex-col-reverse items-start pb-4 pt-6 text-sm md:justify-start md:pb-0 md:pt-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col-reverse items-start md:flex-row md:gap-6 lg:items-center">
-            <p className="mt-8 md:mt-0">{footerText}</p>
+            <p className="mt-8 md:mt-0 text-sm md:text-base">{footerText}</p>
             <div className="grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 md:grid-flow-col md:justify-center md:gap-x-6 md:gap-y-0 lg:text-left">
               {footerLinks.map((link, index) => (
-                <p key={index} className="underline">
+                <p key={index} className="underline text-sm md:text-base">
                   <a href={link.url}>{link.title}</a>
                 </p>
               ))}

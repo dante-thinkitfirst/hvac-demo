@@ -26,14 +26,18 @@ export const Cta53 = (props: Cta53Props) => {
       <div className="container relative">
         <div className="relative z-10 flex flex-col items-center p-8 md:p-12 lg:p-16">
           <div className="max-w-lg text-center">
-            <h2 className="rb-5 mb-5 text-5xl font-bold text-text-alternative md:mb-6 md:text-7xl lg:text-8xl">
+            <h2 className="rb-5 mb-5 text-text-alternative md:mb-6">
               {heading}
             </h2>
-            <p className="text-text-alternative md:text-md">{description}</p>
+            <p className="text-text-alternative">{description}</p>
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
             {buttons.map((button, index) => (
-              <Button key={index} {...button}>
+              <Button
+                key={index}
+                {...button}
+                className={`text-base md:text-lg ${button.className}`}
+              >
                 {button.title}
               </Button>
             ))}
@@ -57,8 +61,12 @@ export const Cta53Defaults: Props = {
   description:
     "Experience the future of HVAC service with intelligent, responsive, and efficient solutions.",
   buttons: [
-    { title: "Book Now" },
-    { title: "Learn More", variant: "secondary-alt" },
+    { title: "Book Now", className: "text-[#0C0802] bg-white border-white" },
+    {
+      title: "Learn More",
+      variant: "secondary-alt",
+      className: "border-border-secondary",
+    },
   ],
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
