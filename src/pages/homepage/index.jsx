@@ -8,7 +8,7 @@ import { Layout521 } from "./components/Layout521";
 import { Testimonial17 } from "./components/Testimonial17";
 import { Layout149 } from "./components/Layout149";
 import { Pricing23 } from "./components/Pricing23";
-import { Cta53 } from "./components/CTA53";
+import { Cta53 } from "./components/Cta53";
 import { Footer2 } from "./components/Footer2";
 
 export default function Homepage() {
