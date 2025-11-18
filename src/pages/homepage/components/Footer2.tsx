@@ -183,7 +183,7 @@ export const Footer2Defaults: Props = {
   termsAndConditions: `
   <p class='text-xs'>
     By subscribing you agree to with our
-    <a href='#' class='underline'>Privacy Policy</a>
+    <a href='/privacy.html' class='underline'>Privacy Policy</a>
     and provide consent to receive updates from our company.
   </p>
   `,
@@ -228,8 +228,8 @@ export const Footer2Defaults: Props = {
   ],
   footerText: "© 2025 ArcticAir. All rights reserved.",
   footerLinks: [
-    { title: "Privacy Policy", url: "#" },
-    { title: "Terms of Service", url: "#" },
+    { title: "Privacy Policy", url: "/privacy.html" },
+    { title: "Terms of Service", url: "/terms.html" },
     { title: "Cookies Settings", url: "#" },
   ],
 };
